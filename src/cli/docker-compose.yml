@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  agent-api:
+    build: .
+    ports:
+      - "8000:8000"
+
+  python-sdk:
+    build:
+      context: .
+      target: python-builder
+    volumes:
+      - ./pycli:/pycli
+    command: python pycli/main.py ...
+
+  dashboard:
+    build:
+      context: ./web-dashboard
+    ports:
+      - "3000:3000"
+    command: npm run dev
