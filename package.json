@@ -1,0 +1,17 @@
+
+{
+  "name": "@myco/web-runtime-agent",
+  "bin": {
+    "web-runtime-agent": "dist/cli/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "run": "node dist/cli/index.js"
+  },
+  "dependencies": {
+    "commander": "^11",
+    "node-fetch": "^3",
+    "dotenv": "^16"
+  }
+}
